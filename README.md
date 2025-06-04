@@ -51,7 +51,3 @@ This script is provided as-is, with no warranty. Use at your own risk. It is not
 ## License
 
 MIT
-
-## Author
-
-[RLAlpha49](https://github.com/RLAlpha49)
