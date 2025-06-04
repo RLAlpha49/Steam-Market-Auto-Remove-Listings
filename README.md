@@ -1,4 +1,4 @@
-# Steam Market Auto-Remove Listings Userscript
+# Steam Market Auto-Remove Listings Script
 
 ## Overview
 
