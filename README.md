@@ -50,4 +50,4 @@ This script is provided as-is, with no warranty. Use at your own risk. It is not
 
 ## License
 
-MIT
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
