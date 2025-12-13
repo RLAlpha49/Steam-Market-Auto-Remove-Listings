@@ -1,53 +1,42 @@
 # Steam Market Auto-Remove Listings Script
 
-## Overview
+A userscript that helps you remove active market listings above a specified price threshold from your Steam Community Market.
 
-This userscript adds a button to the Steam Community Market page, allowing you to automatically remove all your active market listings above a user-specified price. It works from the last to the first page of your listings, making bulk removal of expensive listings quick and easy.
+## Requirements
 
-## Features
-
-- Adds a custom button to the Steam Market UI.
-- Lets you specify a minimum price threshold (e.g., remove all listings above $1.00).
-- Automatically navigates through all your active listings, removing those above the threshold.
-- Works from the last to the first page for efficiency.
-- Simple, non-intrusive UI.
-
-## How It Works
-
-1. The script injects a green button labeled `Remove Listings > $` with an input field for your price threshold.
-2. Enter your desired minimum price (e.g., `1.00` for $1.00) and click the button.
-3. The script will automatically go to the last page of your listings and start removing all listings above the specified price, page by page, until it reaches the first page.
-4. When finished, you'll see an alert indicating completion.
+- Modern web browser (Chrome, Firefox, Edge, etc.) with a userscript manager installed (e.g., Tampermonkey, Greasemonkey, Violentmonkey).
+- Must be logged into your own Steam account.
+- Navigate to your Steam Community Market page matching `https://steamcommunity.com/market/`.
 
 ## Installation
 
-1. **Install a userscript manager:**
-   - [Tampermonkey](https://www.tampermonkey.net/) (recommended)
-   - [Violentmonkey](https://violentmonkey.github.io/)
-   - [Greasemonkey](https://www.greasespot.net/)
-2. **Install the script:**
-   - [Click here to install from GitHub](https://raw.githubusercontent.com/RLAlpha49/steam-market-auto-remove-listings/main/main.js) (or copy the contents of `main.js` into a new userscript in your manager)
-3. **Go to the [Steam Community Market](https://steamcommunity.com/market/)**
-4. **Use the new button** at the top of your active listings tab.
+1. Install a userscript manager (Tampermonkey is recommended).
+2. In Tampermonkey, click **Dashboard** → **+** (Add a new script).
+3. Delete any default template code, then copy & paste the contents of `main.js` into the editor.
+4. Save the script (File → Save or pressing **Ctrl+S**).
+5. Reload or navigate to your Steam Market page; you should see the **Auto-Remove Listings** panel appear (top-right).
 
 ## Usage
 
-- Enter the price threshold in the input field next to the `Remove Listings > $` button.
-- Click the button to start the removal process.
-- The script will process all pages, removing listings above your specified price.
-- You will be notified when the process is complete.
+1. Go to your Steam Community Market page (ensure you see your active listings).
+2. Use the **Auto-Remove Listings** panel (top-right) and set the price threshold (e.g., 1.00 for $1.00).
+3. Click **Start**.
+4. The script will:
+   - Navigate to the last page of your active listings.
+   - Process listings from last to first page, removing those above the threshold.
+   - Handle page navigation and removal dialogs automatically.
+5. Monitor the browser console (`F12` → Console) for status logs and any errors.
+6. Click **Stop** at any time to halt processing.
+   - Optional: click **Pause** if you need it to temporarily stop between actions.
+   - Optional: enable alerts on completion.
 
-## Notes
+## Known Issues & Limitations
 
-- The script only works on the Steam Community Market page (`https://steamcommunity.com/market/`).
-- Minimum price allowed is $0.03 (Steam's minimum listing price).
-- The script is non-destructive and only removes listings above your chosen threshold.
-- You can stop the process at any time by refreshing the page.
+- Steam may have rate limits or UI changes that could affect functionality.
+- The script only removes listings above the threshold; review before starting.
+- Conflicts with other extensions may occur.
+- Always review console logs to ensure correct operation.
 
 ## Disclaimer
 
-This script is provided as-is, with no warranty. Use at your own risk. It is not affiliated with or endorsed by Valve or Steam.
-
-## License
-
-This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
+Use this script at your own risk. The author is not responsible for any account issues resulting from its use.
