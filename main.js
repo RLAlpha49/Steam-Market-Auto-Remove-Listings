@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Steam Market Auto-Remove Listings
 // @description  Adds a button to remove market listings above a user-specified price from last to first page.
-// @version      2.0.0
+// @version      2.0.1
 // @author       RLAlpha49
 // @namespace    https://github.com/RLAlpha49/Steam-Market-Auto-Remove-Listings-Script
 // @license      MIT
@@ -581,18 +581,17 @@
 	 * @throws {Error} If elements not found.
 	 */
 	async function runRemoval(threshold, state) {
-		const nextBtn = document.querySelector(SELECTORS.NEXT_BTN);
-		const prevBtn = document.querySelector(SELECTORS.PREV_BTN);
-		if (!nextBtn || !prevBtn) {
-			throw new Error(
-				"Could not find listing pagination buttons. Are you on the Active Listings tab?"
-			);
-		}
 		const container = getListingsContainer();
 		if (!container) {
 			throw new Error(
 				"Could not find the Active Listings container. Make sure your listings are visible."
 			);
+		}
+
+		const nextBtn = document.querySelector(SELECTORS.NEXT_BTN);
+		const prevBtn = document.querySelector(SELECTORS.PREV_BTN);
+		if (!nextBtn || !prevBtn) {
+			debug("Pagination buttons not found; assuming single page.");
 		}
 
 		const pageSizeBtn = document.getElementById("my_listing_pagesize_100");
